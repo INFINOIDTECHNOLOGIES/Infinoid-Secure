@@ -48,6 +48,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, message: "Invalid submission type." }, { status: 400 });
   } catch (error) {
     console.error("Submission API error", error);
+
+    const errorMessage = error instanceof Error ? error.message : "";
+    if (errorMessage.includes("querySrv") || errorMessage.includes("ENOTFOUND") || errorMessage.includes("ECONNREFUSED")) {
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "MongoDB connection failed. Check the Atlas hostname in MONGODB_URI, DNS/SRV resolution, and network access.",
+        },
+        { status: 503 },
+      );
+    }
+
     return NextResponse.json({ ok: false, message: "Unable to save submission." }, { status: 500 });
   }
 }

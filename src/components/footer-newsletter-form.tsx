@@ -10,7 +10,8 @@ export function FooterNewsletterForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     setStatus("sending");
     setMessage("");
@@ -34,7 +35,7 @@ export function FooterNewsletterForm() {
       return;
     }
 
-    event.currentTarget.reset();
+    form.reset();
     setStatus("success");
     setMessage("Subscription saved.");
   }

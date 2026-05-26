@@ -10,7 +10,8 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
     setStatus("sending");
     setMessage("");
@@ -37,7 +38,7 @@ export function ContactForm() {
       return;
     }
 
-    event.currentTarget.reset();
+    form.reset();
     setStatus("success");
     setMessage("Inquiry submitted. Our team will respond shortly.");
   }
