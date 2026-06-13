@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
-            <BrandLogo compact className="text-white [&_span:last-child]:text-slate-300" />
+            <BrandLogo compact />
             <h2 className="mt-4 max-w-md text-3xl font-semibold tracking-tight">Security systems built for scale, clarity, and control.</h2>
             <div className="mt-6 space-y-3 text-sm text-slate-300">
               <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-cyan-300" /><span>Delhi HQ: 22-A, Asaf Ali Road, Darya Ganj, Central Delhi, New Delhi, 110002</span></div>

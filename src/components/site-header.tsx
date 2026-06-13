@@ -241,8 +241,8 @@ export function SiteHeader() {
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <BrandLogo compact className="shrink-0" />
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 md:gap-8 lg:px-8 xl:gap-12">
+        <BrandLogo compact className="shrink-0 lg:pr-4" />
 
         <nav className="hidden items-center justify-center gap-1 xl:flex">
             {primaryNav.map((item) => (
